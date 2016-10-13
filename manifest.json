@@ -1,0 +1,30 @@
+{
+    "author": "Siberis",
+    "background": {
+        "page": "background.html",
+        "persistent": true
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "js/keypress.js"
+            ],
+            "matches": [
+                "*://*.feedly.com/*"
+            ]
+        }
+    ],
+    "description": "Open Feedly News in Background Tab",
+    "icons": {
+        "128": "images/icon_128.png"
+    },
+    "manifest_version": 2,
+    "minimum_edge_version": "33.14281.1000.0",
+    "name": "FeedlyBackTab",
+    "options_page": "options.html",
+    "permissions": [
+        "http://www.feedly.com/*",
+        "storage"
+    ],
+    "version": "0.01"
+}
