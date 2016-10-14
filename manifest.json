@@ -11,7 +11,8 @@
             ],
             "matches": [
                 "*://*.feedly.com/*"
-            ]
+            ],
+			"css": ["css/darkMode.css"]
         }
     ],
     "description": "Open Feedly News in Background Tab",
