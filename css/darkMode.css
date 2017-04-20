@@ -1,10 +1,27 @@
 .home {
-	background: #222 !important;
+	background: #333 !important;
 	color: #000 !important;
-	background-color: #222 !important;}
+	background-color: #333 !important;}
 .area {
 	border-color: #313131 !important;}
+#mainBarFX{
+	background-color: #333 !important;}  
+#searchBarFX{
+	background-color: #333 !important;} 
+#headerBarFX{
+	background-color: #333 !important;} 
+.fx .entry.unread .title{
+	color: #77bbff !important;} 
+.fx .entry.u0:hover{
+	background-color: #333 !important;} 
+.fx .entry.u0{
+	border-top: 1px solid #555 !important;}
+.fx .form textarea, .fx .form input:not([type]), .fx .form [type='text'], .fx .form [type='email'], .fx .form [type='search'], .fx .form [type='password'], .fx .form [type='date'], .fx .form [type='datetime-local'], .fx .form [type='tel'], .fx .form [type='time'], .fx .form [type='url'], .fx .form [type='number'], .fx .form .public-DraftEditor-content, .fx .form .public-DraftEditorPlaceholder-root{
+	background: #333 !important;} 
 
+
+#entry#unread{
+	background-color: #333 !important;}  
 #feedlyPart0.area,
 #floatingBar,
 #contentArea {
@@ -16,26 +33,26 @@
 #floatingBar h1, h1, #categoriesArea h2  {
 	color: #aaa !important;}  
 #feedlyProBar {
-	background-color: #222 !important;}
+	background-color: #333 !important;}
 #feedlyFrame {
 	background-color: #333 !important;}
 .proShowcase {
 	color: #aaa !important;
-	background-color: #222 !important;
+	background-color: #333 !important;
 }
  
 .feedIndex:hover {
-	background-color: #222 !important;
+	background-color: #333 !important;
 	color: #77bbFF !important;
     transition: color 0.5s;
     transition: background-color 0.2s;}
 .header:hover {
-	background-color: #222 !important;
+	background-color: #333 !important;
 	color: #77bbFF !important;
     transition: color 0.2s;
     transition: background-color 0.2s;}
 .moreHandle:hover {
-	background-color: #222 !important;
+	background-color: #333 !important;
 	color: #77bbFF !important;
     transition: color 0.5s;
     transition: background-color 0.2s;}
@@ -166,7 +183,7 @@ h2, .label h2 {
 	background-color: #4d4d4d !important;}
 .websiteCallForAction {
 	background-color: #2e2e2e !important;
-	border: 1px solid #222 !important;
+	border: 1px solid #333 !important;
 }
 .websiteCallForAction:hover {
 	background-color: #2a2a2a !important;
