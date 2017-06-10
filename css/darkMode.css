@@ -10,6 +10,8 @@
 	background-color: #333 !important;} 
 #headerBarFX{
 	background-color: #333 !important;} 
+#headerBarFX header {
+	background-color: #333 !important;} 
 .fx .entry.unread .title{
 	color: #77bbff !important;} 
 .fx .entry.u0:hover{
