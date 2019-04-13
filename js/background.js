@@ -1,5 +1,5 @@
-browser.runtime.onMessage.addListener(messageObject => {
-	browser.tabs.create({
+chrome.runtime.onMessage.addListener(messageObject => {
+	chrome.tabs.create({
 		url: messageObject.url,
 		active: false
 	});

@@ -13,7 +13,7 @@ class FeedlyBackTabOptions {
 	}
 	init() {
 		document.addEventListener('DOMContentLoaded',
-			() => browser.storage.local.get('FeedlyBackTab', settings => {
+			() => chrome.storage.local.get('FeedlyBackTab', settings => {
 				console.log(settings)
 				if (!settings.backKey) {
 					settings.backKey = this._defaultBackKey;
@@ -31,7 +31,7 @@ class FeedlyBackTabOptions {
 	}
 	save() {
 		let backKey = this._backKey.value;
-		browser.storage.local.set({ 'FeedlyBackTab': { backKey: backKey } }, () => {
+		chrome.storage.local.set({ 'FeedlyBackTab': { backKey: backKey } }, () => {
 			this.updateStatus(this._messages.success, this._messageTypes.success);
 		});
 	}

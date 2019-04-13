@@ -12,7 +12,9 @@
             "matches": [
                 "*://*.feedly.com/*"
             ],
-			"css": ["css/darkMode.css"]
+            "css": [
+                "css/darkMode.css"
+            ]
         }
     ],
     "description": "Open Feedly News in Background Tab",
@@ -27,5 +29,9 @@
         "http://www.feedly.com/*",
         "storage"
     ],
-    "version": "0.01"
+    "version": "0.1",
+    "-ms-preload": {
+        "backgroundScript": "backgroundScriptsAPIBridge.js",
+        "contentScript": "contentScriptsAPIBridge.js"
+    }
 }

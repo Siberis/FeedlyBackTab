@@ -1,14 +1,13 @@
 class FeedlyBackTab {
 	constructor() {
 		this._backKeyCode = 104;
+		this._backKeyCode2 = 102;
 		this.selectors = [
-			'div.selectedEntry a.title',
-			'.selectedEntry a.visitWebsiteButton',
-			'a.visitWebsiteButton'
+			'a.entryTitle'
 		];
 	}
 	init() {
-		browser.storage.local.get('FeedlyBackTab', settings => {
+		chrome.storage.local.get('FeedlyBackTab', settings => {
 			if (settings.FeedlyBackTab && settings.FeedlyBackTab.backKey) {
 				this._backKeyCode = settings.FeedlyBackTab.backKey.charCodeAt(0);
 			}
@@ -16,11 +15,13 @@ class FeedlyBackTab {
 	}
 	handler(e) {
 		var tag = e.target.tagName.toLowerCase();
+		console.log(tag);
 		if (tag != 'input' && tag != 'textarea') {
-			if (e.keyCode == this._backKeyCode || e.keyCode == this._frontKeyCode) {
+			if (e.keyCode == this._backKeyCode || e.keyCode == this._backKeyCode2 || e.keyCode == this._frontKeyCode) {
 				let url = this.selectors.filter(x => document.querySelector(x)).slice(0, 1).map(x => document.querySelector(x));
+				console.log(url);
 				if (url.length > 0) {
-					browser.runtime.sendMessage({ url: url[0].href });
+					chrome.runtime.sendMessage({ url: url[0].href });
 				}
 				else {
 					console.log("Could not find any selectors from: " + this.selectors.join());
