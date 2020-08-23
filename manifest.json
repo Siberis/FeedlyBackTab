@@ -11,9 +11,6 @@
             ],
             "matches": [
                 "*://*.feedly.com/*"
-            ],
-            "css": [
-                "css/darkMode.css"
             ]
         }
     ],

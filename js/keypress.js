@@ -35,16 +35,5 @@ class FeedlyBackTab {
 		let fbt = new FeedlyBackTab();
 		fbt.init();
 		window.addEventListener('keypress', (e) => fbt.handler(e), false);
-
-		// let link = document.createElement('link');
-		// link.type = 'text/css';
-		// link.rel = "stylesheet";
-		// link.href = "darkMode.css";
-
-		// document.querySelector("head").appendChild(link);
-
-
-
-
 	}
 })();
