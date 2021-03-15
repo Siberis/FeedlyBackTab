@@ -1,7 +1,7 @@
 class FeedlyBackTab {
 	constructor() {
-		this._backKeyCode = 104;
-		this._backKeyCode2 = 102;
+		this._backKey = 'h';
+		this._backKey2 = 's';
 		this.selectors = [
 			'a.entryTitle'
 		];
@@ -9,7 +9,7 @@ class FeedlyBackTab {
 	init() {
 		chrome.storage.local.get('FeedlyBackTab', settings => {
 			if (settings.FeedlyBackTab && settings.FeedlyBackTab.backKey) {
-				this._backKeyCode = settings.FeedlyBackTab.backKey.charCodeAt(0);
+				this._backKey = settings.FeedlyBackTab.backKey.charCodeAt(0);
 			}
 		});
 	}
@@ -17,7 +17,7 @@ class FeedlyBackTab {
 		var tag = e.target.tagName.toLowerCase();
 		console.log(tag, e.keyCode);
 		if (tag != 'input' && tag != 'textarea') {
-			if (e.keyCode == this._backKeyCode || e.keyCode == this._backKeyCode2 || e.keyCode == this._frontKeyCode) {
+			if (e.key == this._backKey || e.key == this._backKey2 || e.keyCode == this._frontKeyCode) {
 				let url = this.selectors.filter(x => document.querySelector(x)).slice(0, 1).map(x => document.querySelector(x));
 				console.log(url);
 				if (url.length > 0) {
@@ -26,9 +26,10 @@ class FeedlyBackTab {
 				else {
 					console.log("Could not find any selectors from: " + this.selectors.join());
 				}
-			} else if (e.key === 'd') {
-				console.log("keyDown")
+			} else if (e.key === 'f') {
 				document.querySelector('body').dispatchEvent(new KeyboardEvent('keydown', { 'key': 'j' }));
+			} else if (e.key === 'd') {
+				document.querySelector('body').dispatchEvent(new KeyboardEvent('keydown', { 'key': 'k' }));
 			}
 		}
 	}
