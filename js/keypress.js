@@ -15,7 +15,7 @@ class FeedlyBackTab {
 	}
 	handler(e) {
 		var tag = e.target.tagName.toLowerCase();
-		console.log(tag);
+		console.log(tag, e.keyCode);
 		if (tag != 'input' && tag != 'textarea') {
 			if (e.keyCode == this._backKeyCode || e.keyCode == this._backKeyCode2 || e.keyCode == this._frontKeyCode) {
 				let url = this.selectors.filter(x => document.querySelector(x)).slice(0, 1).map(x => document.querySelector(x));
@@ -26,6 +26,9 @@ class FeedlyBackTab {
 				else {
 					console.log("Could not find any selectors from: " + this.selectors.join());
 				}
+			} else if (e.key === 'd') {
+				console.log("keyDown")
+				document.querySelector('body').dispatchEvent(new KeyboardEvent('keydown', { 'key': 'j' }));
 			}
 		}
 	}
