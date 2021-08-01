@@ -32,12 +32,14 @@ class FeedlyBackTab {
 				document.querySelector('body').dispatchEvent(new KeyboardEvent('keydown', { 'key': 'k' }));
 			}
 		}
+		e.preventDefault();
+		e.stopPropagation();
 	}
 }
 (() => {
 	if (window == top) {
 		let fbt = new FeedlyBackTab();
 		fbt.init();
-		window.addEventListener('keypress', (e) => fbt.handler(e), false);
+		window.addEventListener('keydown', (e) => fbt.handler(e), false);
 	}
 })();
